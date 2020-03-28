@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ 		http://www.springframework.org/schema/beans/spring-beans.xsd 
+ 		http://www.springframework.org/schema/context 
+ 		http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!--  의존 객체 자동 주입 사용하기 위해 명시 -->
+	<context:annotation-config />
+
+<!--  @Autowired는 객체의 타입으로 찾는다. -->
+	<bean id="wordDao" class="com.word.dao.WordDao" >
+		<!-- <qualifier value="usedDao"/> -->
+	</bean>
+	<bean id="wordDao2" class="com.word.dao.WordDao" />
+	<bean id="wordDao3" class="com.word.dao.WordDao" />
+	
+	<bean id="registerService" class="com.word.service.WordRegisterServiceUseAutowired" />
+	
+	<bean id="searchService" class="com.word.service.WordSearchServiceUseAutowired" />
+	
+</beans>

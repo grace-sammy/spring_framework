@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ 		http://www.springframework.org/schema/beans/spring-beans.xsd 
+ 		http://www.springframework.org/schema/context 
+ 		http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--  의존객체자동주입을 위하여 삽입 -->
+	<context:annotation-config />
+	
+	<!--  @Resource는 bean의 객체의 이름으로 찾는다. 예를 들어 wordDao, wordDao2 등등으로 찾음 -->
+
+	<bean id="wordDao" class="com.word.dao.WordDao" >
+		<!-- <qualifier value="usedDao"/> -->
+	</bean>
+	<bean id="wordDao2" class="com.word.dao.WordDao" />
+	<bean id="wordDao3" class="com.word.dao.WordDao" />
+	
+	<bean id="registerService" class="com.word.service.WordRegisterServiceUseResource" />
+	
+	<bean id="searchService" class="com.word.service.WordSearchServiceUseResource" />
+	
+</beans>
