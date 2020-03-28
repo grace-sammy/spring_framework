@@ -11,8 +11,11 @@
 	<!--  의존 객체 자동 주입 사용하기 위해 명시 -->
 	<context:annotation-config />
 
-<!--  @Autowired는 객체의 타입으로 찾는다. -->
+	<!--  @Autowired는 객체의 타입으로 찾는다. -->
 	<bean id="wordDao" class="com.word.dao.WordDao" >
+	
+	<!--  bean class가 같은  여러개일때 특정한 것을 찾기 위해서는 <qualifier value="usedDao"/> 처음 qualifier를 넣어주고, 
+	쓰는 곳에서 @Qualifier("usedDao") 준다. -->
 		<!-- <qualifier value="usedDao"/> -->
 	</bean>
 	<bean id="wordDao2" class="com.word.dao.WordDao" />
