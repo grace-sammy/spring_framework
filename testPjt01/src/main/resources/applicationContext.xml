@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ 		http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+ <!-- TransportationWalk로부터 객체를 사용하기 위해 사용, java처럼 new 쓸 필요가 없다. 컨테이너!
+ 객체가 생성됨, 메모리가 로드됨 -->
+	<bean id="tWalk" class="testPjt01.TransportationWalk"></bean>
+	
+</beans>
